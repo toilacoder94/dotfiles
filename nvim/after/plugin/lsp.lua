@@ -70,11 +70,12 @@ lspconfig.solang.setup {
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-vim.api.nvim_create_autocmd("BufWritePre", {
+--[[ vim.api.nvim_create_autocmd("BufWritePre", {
+  --
   callback = function()
     vim.lsp.buf.formatting_sync(nil, 3000)
   end,
-})
+}) ]]
 
 -- use go.nvim plugin for Go code
 require('go').setup({
